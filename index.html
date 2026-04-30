@@ -113,7 +113,6 @@ nav.scrolled { padding: 14px 60px; }
   pointer-events: none;
 }
 
-/* Decorative large numeral */
 .hero-numeral {
   position: absolute;
   top: 50%;
@@ -307,7 +306,6 @@ nav.scrolled { padding: 14px 60px; }
   padding: 48px 44px;
   position: relative;
   overflow: hidden;
-  transition: background 0.25s;
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.5s, transform 0.5s, background 0.25s;
@@ -389,7 +387,7 @@ nav.scrolled { padding: 14px 60px; }
   user-select: none;
 }
 
-/* ── Stats credentials strip ── */
+/* ── Proof strip ── */
 #proof {
   background: var(--cream-2);
   padding: 80px 60px;
@@ -436,7 +434,7 @@ nav.scrolled { padding: 14px 60px; }
   line-height: 1.4;
 }
 
-/* ── Acceptances marquee ── */
+/* ── Marquee ── */
 .schools-strip {
   background: var(--forest);
   padding: 20px 0;
@@ -459,23 +457,15 @@ nav.scrolled { padding: 14px 60px; }
   padding: 0 32px;
   font-variation-settings: "opsz" 24;
 }
-
-.schools-track span.hot {
-  color: var(--cream);
-  font-weight: 500;
-}
-
-.schools-track .sep {
-  color: var(--moss);
-  padding: 0;
-}
+.schools-track span.hot { color: var(--cream); font-weight: 500; }
+.schools-track .sep { color: var(--moss); padding: 0; }
 
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-/* ── About / Team ── */
+/* ── About ── */
 #about {
   padding: 120px 60px;
   background: var(--cream);
@@ -565,7 +555,7 @@ nav.scrolled { padding: 14px 60px; }
   pointer-events: none;
 }
 
-/* ── How it works ── */
+/* ── Process ── */
 #process {
   padding: 120px 60px;
   background: var(--cream-2);
@@ -618,7 +608,7 @@ nav.scrolled { padding: 14px 60px; }
   color: var(--dim);
 }
 
-/* ── Contact / CTA ── */
+/* ── Contact ── */
 #contact {
   background: var(--forest);
   color: var(--cream);
@@ -654,10 +644,7 @@ nav.scrolled { padding: 14px 60px; }
   line-height: 0.95;
   margin-bottom: 24px;
 }
-.contact-left h2 em {
-  font-style: italic;
-  color: rgba(242,237,225,0.5);
-}
+.contact-left h2 em { font-style: italic; color: rgba(242,237,225,0.5); }
 
 .contact-left p {
   font-size: 16px;
@@ -743,7 +730,6 @@ nav.scrolled { padding: 14px 60px; }
 }
 
 .form-group select option { background: var(--forest); color: var(--cream); }
-
 .form-group textarea { resize: vertical; min-height: 100px; }
 
 .form-submit {
@@ -783,7 +769,6 @@ footer {
   text-decoration: none;
 }
 .footer-logo span { color: var(--moss); }
-
 .footer-copy { font-size: 12px; letter-spacing: 0.05em; }
 
 .footer-links {
@@ -846,11 +831,9 @@ footer {
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-numeral">23</div>
-
   <div class="hero-eyebrow">Peer-led · Results-driven · Est. 2026</div>
   <h1>Built by seniors<br>who <em>got in.</em></h1>
   <p class="hero-sub">For the students who will.</p>
-
   <div class="hero-actions">
     <a href="#contact" class="btn-primary">Book a free intro call →</a>
     <a href="#services" class="btn-ghost">See what we do ↓</a>
@@ -901,7 +884,6 @@ footer {
     <span>Macalester</span><span class="sep">·</span>
     <span>Tulane</span><span class="sep">·</span>
     <span>Purdue</span><span class="sep">·</span>
-    <!-- duplicate for seamless loop -->
     <span class="hot">UPenn</span><span class="sep">·</span>
     <span class="hot">Cornell</span><span class="sep">·</span>
     <span class="hot">Duke</span><span class="sep">·</span>
@@ -930,7 +912,6 @@ footer {
     <span class="section-label">What we offer</span>
     <h2 class="section-title">Two services,<br>every grade <em>covered.</em></h2>
   </div>
-
   <div class="services-grid">
     <div class="service-card">
       <div class="service-grade">Rising 9th &amp; 10th graders</div>
@@ -944,7 +925,6 @@ footer {
       </ul>
       <div class="service-num">01</div>
     </div>
-
     <div class="service-card">
       <div class="service-grade">Rising 11th graders</div>
       <div class="service-name">Profile &amp; Story<br>Development</div>
@@ -957,7 +937,6 @@ footer {
       </ul>
       <div class="service-num">02</div>
     </div>
-
     <div class="service-card" style="grid-column: 1 / -1;">
       <div class="service-grade">Rising 12th graders</div>
       <div class="service-name">Full College Application<br><em>Consulting</em></div>
@@ -1001,7 +980,6 @@ footer {
     <span class="section-label">Who we are</span>
     <h2 class="section-title">Two seniors.<br>One <em>process.</em></h2>
   </div>
-
   <div class="about-grid">
     <div class="about-card">
       <div class="about-name">Lay</div>
@@ -1016,11 +994,10 @@ footer {
       </ul>
       <div class="about-initial">L</div>
     </div>
-
     <div class="about-card">
       <div class="about-name">Isha</div>
       <div class="about-role">Co-Founder · Policy &amp; Advocacy Track</div>
-      <p class="about-bio">Banneker Key Scholar + W&L Johnson Scholar — two full rides. Her passion project started as a school period club and turned into a county-wide policy initiative with a state bill sponsor.</p>
+      <p class="about-bio">Banneker Key Scholar + W&amp;L Johnson Scholar — two full rides. Her passion project started as a school period club and turned into a county-wide policy initiative with a state bill sponsor.</p>
       <ul class="about-creds">
         <li>Banneker Key Scholar, UMD (full ride)</li>
         <li>Johnson Scholar, Washington &amp; Lee (full ride)</li>
@@ -1039,7 +1016,6 @@ footer {
     <span class="section-label">How it works</span>
     <h2 class="section-title">Simple.<br><em>Structured.</em></h2>
   </div>
-
   <div class="process-steps">
     <div class="step">
       <div class="step-num">01</div>
@@ -1066,13 +1042,12 @@ footer {
     <div class="contact-left">
       <h2>Ready to<br>get <em>admitted?</em></h2>
       <p>Fill out the form and we'll reach out within 24 hours to schedule your free intro call. No commitment required.</p>
-
       <div class="contact-details">
         <a href="mailto:team@admitteam.us" class="contact-detail">
           <span class="contact-detail-label">E</span>
           team@admitteam.us
         </a>
-        <a href="https://instagram.com/admitteam" class="contact-detail" target="_blank">
+        <a href="https://instagram.com/admit.team" class="contact-detail" target="_blank">
           <span class="contact-detail-label">IG</span>
           @admit.team
         </a>
@@ -1083,24 +1058,27 @@ footer {
       </div>
     </div>
 
-    <div class="contact-form">
+    <!-- ── Netlify Form ── -->
+    <form class="contact-form" name="inquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="inquiry">
+      <p style="display:none"><input name="bot-field"></p>
       <div class="form-row">
         <div class="form-group">
-          <label>First Name</label>
-          <input type="text" placeholder="Jordan">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" placeholder="Jordan" required>
         </div>
         <div class="form-group">
-          <label>Last Name</label>
-          <input type="text" placeholder="Smith">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last-name" placeholder="Smith" required>
         </div>
       </div>
       <div class="form-group">
-        <label>Email</label>
-        <input type="email" placeholder="jordan@email.com">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="jordan@email.com" required>
       </div>
       <div class="form-group">
-        <label>Current Grade (Fall 2025)</label>
-        <select>
+        <label for="grade">Current Grade (Fall 2025)</label>
+        <select id="grade" name="grade" required>
           <option value="" disabled selected>Select your grade</option>
           <option>Rising 9th grader</option>
           <option>Rising 10th grader</option>
@@ -1110,11 +1088,11 @@ footer {
         </select>
       </div>
       <div class="form-group">
-        <label>What are you looking for?</label>
-        <textarea placeholder="Tell us a bit about where you are and what you're hoping to get out of working together..."></textarea>
+        <label for="message">What are you looking for?</label>
+        <textarea id="message" name="message" placeholder="Tell us a bit about where you are and what you're hoping to get out of working together..."></textarea>
       </div>
-      <button class="form-submit">Send inquiry →</button>
-    </div>
+      <button type="submit" class="form-submit" id="submit-btn">Send inquiry →</button>
+    </form>
   </div>
 </section>
 
@@ -1136,12 +1114,10 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// Intersection observer for scroll animations
+// Scroll animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.12 });
 
@@ -1149,18 +1125,38 @@ document.querySelectorAll('.stat-item, .service-card, .about-card, .step').forEa
   observer.observe(el);
 });
 
-// Stagger stat items
 document.querySelectorAll('.stat-item').forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.1}s`;
 });
 
-// Form submit (placeholder)
-document.querySelector('.form-submit').addEventListener('click', (e) => {
+// Netlify form submission
+const form = document.querySelector('form[name="inquiry"]');
+const submitBtn = document.getElementById('submit-btn');
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const btn = e.target;
-  btn.textContent = 'Sent! We\'ll be in touch ✓';
-  btn.style.background = 'var(--moss)';
-  btn.style.color = 'white';
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  try {
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    });
+
+    if (res.ok) {
+      submitBtn.textContent = "We'll be in touch within 24 hours ✓";
+      submitBtn.style.background = '#4A7C59';
+      submitBtn.style.color = 'white';
+      form.querySelectorAll('input:not([type=hidden]), select, textarea').forEach(el => el.value = '');
+    } else {
+      throw new Error();
+    }
+  } catch {
+    submitBtn.textContent = 'Something went wrong — email team@admitteam.us';
+    submitBtn.disabled = false;
+  }
 });
 </script>
 </body>
