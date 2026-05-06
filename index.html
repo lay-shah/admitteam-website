@@ -127,17 +127,77 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
 .footer-links a { font-size:12px; color:rgba(242,237,225,0.5); text-decoration:none; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
 .footer-links a:hover { color:var(--cream); }
 @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── Pricing ── */
+#pricing { padding: 120px 60px; background: var(--cream); border-top: 1.5px solid var(--ink); }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 64px; }
+.price-card { background: var(--cream-2); padding: 48px 40px; position: relative; display: flex; flex-direction: column; opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s, background 0.25s; }
+.price-card.visible { opacity: 1; transform: translateY(0); }
+.price-card:nth-child(2) { transition-delay: 0.1s; }
+.price-card:nth-child(3) { transition-delay: 0.2s; }
+.price-card.featured { background: var(--forest); color: var(--cream); }
+.price-card.featured .price-grade { color: rgba(206,255,150,0.75); }
+.price-card.featured .price-name { color: var(--cream); }
+.price-card.featured .price-desc { color: rgba(242,237,225,0.7); }
+.price-card.featured .price-list li { color: var(--cream); }
+.price-card.featured .price-list li::before { color: rgba(242,237,225,0.5); }
+.price-card.featured .price-cta { background: var(--cream); color: var(--forest); }
+.price-card.featured .price-cta:hover { background: #EBE5D3; }
+.price-card.featured .price-tag { color: rgba(242,237,225,0.45); border-top-color: rgba(242,237,225,0.2); }
+.price-flag { position: absolute; top: 24px; right: 24px; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 600; color: var(--cream); background: var(--moss); padding: 5px 10px; border-radius: 999px; }
+.price-grade { font-size: 11px; text-transform: uppercase; letter-spacing: 0.28em; font-weight: 600; color: var(--moss); margin-bottom: 14px; }
+.price-name { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 450; letter-spacing: -0.02em; font-variation-settings: "opsz" 72, "SOFT" 20; line-height: 1.1; margin-bottom: 14px; color: var(--ink); }
+.price-name em { font-style: italic; color: var(--forest); }
+.price-card.featured .price-name em { color: rgba(206,255,150,0.85); }
+.price-desc { font-size: 14px; line-height: 1.6; color: var(--dim); margin-bottom: 28px; }
+.price-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; flex: 1; }
+.price-list li { font-size: 13.5px; color: var(--ink); display: flex; align-items: flex-start; gap: 10px; line-height: 1.45; }
+.price-list li::before { content: '✓'; color: var(--moss); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.price-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 500; color: var(--dim); padding-top: 18px; border-top: 1px solid rgba(15,15,15,0.12); margin-bottom: 18px; }
+.price-cta { background: var(--forest); color: var(--cream); padding: 14px 24px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; text-align: center; transition: background 0.2s, transform 0.15s; }
+.price-cta:hover { background: var(--forest-2); transform: translateY(-1px); }
+
+/* ── FAQ ── */
+#faq { padding: 120px 60px; background: var(--cream); border-top: 1.5px solid var(--ink); }
+.faq-list { margin-top: 48px; max-width: 920px; }
+.faq-item { border-bottom: 1px solid rgba(15,15,15,0.15); }
+.faq-item:first-child { border-top: 1px solid rgba(15,15,15,0.15); }
+.faq-item summary { list-style: none; cursor: pointer; padding: 28px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; transition: opacity 0.2s; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { opacity: 0.7; }
+.faq-q { font-family: 'Fraunces', serif; font-size: clamp(20px, 2.2vw, 26px); font-weight: 450; letter-spacing: -0.015em; line-height: 1.25; font-variation-settings: "opsz" 72, "SOFT" 20; color: var(--ink); }
+.faq-icon { flex-shrink: 0; width: 28px; height: 28px; border: 1.5px solid var(--forest); border-radius: 50%; position: relative; transition: transform 0.3s, background 0.2s; }
+.faq-icon::before, .faq-icon::after { content: ''; position: absolute; top: 50%; left: 50%; background: var(--forest); transition: opacity 0.2s; }
+.faq-icon::before { width: 11px; height: 1.5px; transform: translate(-50%, -50%); }
+.faq-icon::after { width: 1.5px; height: 11px; transform: translate(-50%, -50%); }
+.faq-item[open] .faq-icon { background: var(--forest); transform: rotate(180deg); }
+.faq-item[open] .faq-icon::before { background: var(--cream); }
+.faq-item[open] .faq-icon::after { opacity: 0; }
+.faq-a { padding: 0 60px 28px 0; font-size: 16px; line-height: 1.7; color: var(--dim); max-width: 760px; }
+.faq-a strong { color: var(--ink); font-weight: 500; }
+
+/* ── Calendly card inside contact ── */
+.calendly-card { background: rgba(242,237,225,0.07); border: 1px dashed rgba(242,237,225,0.2); border-radius: 14px; padding: 24px 26px; margin-bottom: 28px; }
+.calendly-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 600; color: var(--moss); margin-bottom: 10px; }
+.calendly-card h3 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 450; letter-spacing: -0.015em; font-variation-settings: "opsz" 36; margin-bottom: 8px; line-height: 1.2; color: var(--cream); }
+.calendly-card h3 em { font-style: italic; color: rgba(242,237,225,0.55); }
+.calendly-card p { font-size: 13.5px; color: rgba(242,237,225,0.6); margin-bottom: 16px; line-height: 1.55; max-width: none; }
+.calendly-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--cream); color: var(--forest); padding: 12px 22px; border-radius: 999px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+.calendly-btn:hover { background: #EBE5D3; transform: translateY(-1px); }
+.contact-or { font-size: 11px; text-transform: uppercase; letter-spacing: 0.32em; font-weight: 600; color: rgba(242,237,225,0.4); margin: 16px 0 14px; display: flex; align-items: center; gap: 14px; }
+.contact-or::before, .contact-or::after { content: ''; flex: 1; height: 1px; background: rgba(242,237,225,0.15); }
 @media(max-width:900px){
   nav{padding:18px 24px} nav.scrolled{padding:12px 24px} .nav-links{display:none}
   #hero{padding:0 24px 60px} #stats{padding:0 24px} .stats-inner{grid-template-columns:1fr 1fr}
-  #services,#about,#process,#contact{padding:80px 24px}
-  .services-grid,.about-grid,.process-steps{grid-template-columns:1fr}
+  #services,#about,#process,#contact,#pricing,#faq{padding:80px 24px}
+  .services-grid,.about-grid,.process-steps,.pricing-grid{grid-template-columns:1fr}
   .proof-inner{grid-template-columns:1fr;gap:32px} .proof-divider{display:none}
   .proof-item{text-align:left!important;padding:0!important}
   .contact-inner{grid-template-columns:1fr;gap:48px} .form-row{grid-template-columns:1fr}
   footer{flex-direction:column;gap:16px;text-align:center}
   .hero-numeral{display:none} #proof{padding:60px 24px}
   .section-header{flex-direction:column;gap:16px}
+  .faq-q{font-size:18px} .faq-a{padding-right:36px}
 }
 </style>
 </head>
@@ -147,8 +207,9 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
   <a class="nav-logo" href="#">Admit Team<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#process">How It Works</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Book a Call</a></li>
   </ul>
 </nav>
@@ -219,6 +280,68 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
   </div>
 </section>
 
+<!-- ── Pricing ── -->
+<section id="pricing">
+  <div class="section-header">
+    <span class="section-label">Packages</span>
+    <h2 class="section-title">Pick what fits<br>your <em>timeline.</em></h2>
+  </div>
+  <div class="pricing-grid">
+
+    <div class="price-card">
+      <div class="price-grade">Rising 9th &amp; 10th</div>
+      <h3 class="price-name">Passion Project<br><em>Mentorship</em></h3>
+      <p class="price-desc">For underclassmen building their story from scratch.</p>
+      <ul class="price-list">
+        <li>Idea discovery &amp; project framing</li>
+        <li>Opportunity &amp; program mapping</li>
+        <li>Monthly accountability check-ins</li>
+        <li>EC narrative development</li>
+        <li>Resume &amp; activity list groundwork</li>
+        <li>Direct text/email access between sessions</li>
+      </ul>
+      <div class="price-tag">Contact for pricing</div>
+      <a href="#contact" class="price-cta">Book a free call →</a>
+    </div>
+
+    <div class="price-card featured">
+      <div class="price-flag">Most Popular</div>
+      <div class="price-grade">Rising 11th</div>
+      <h3 class="price-name">Profile &amp; Story<br><em>Development</em></h3>
+      <p class="price-desc">Junior year is the most critical window before apps open.</p>
+      <ul class="price-list">
+        <li>Full EC audit &amp; story identification</li>
+        <li>Passion project acceleration</li>
+        <li>Summer program strategy &amp; applications</li>
+        <li>Early college list preview</li>
+        <li>Standardized testing strategy</li>
+        <li>Recommendation letter prep</li>
+        <li>Bi-weekly working sessions</li>
+      </ul>
+      <div class="price-tag">Contact for pricing</div>
+      <a href="#contact" class="price-cta">Book a free call →</a>
+    </div>
+
+    <div class="price-card">
+      <div class="price-grade">Rising 12th</div>
+      <h3 class="price-name">Full Application<br><em>Consulting</em></h3>
+      <p class="price-desc">End-to-end support from school list to submit.</p>
+      <ul class="price-list">
+        <li>School list strategy &amp; balancing</li>
+        <li>Common App essay (drafts &amp; edits)</li>
+        <li>Unlimited supplemental essays</li>
+        <li>Activity list &amp; honors polish</li>
+        <li>Interview prep &amp; mock interviews</li>
+        <li>Scholarship application support</li>
+        <li>Weekly sessions through December</li>
+      </ul>
+      <div class="price-tag">Contact for pricing</div>
+      <a href="#contact" class="price-cta">Book a free call →</a>
+    </div>
+
+  </div>
+</section>
+
 <section id="about">
   <div class="section-header">
     <span class="section-label">Who we are</span>
@@ -266,6 +389,97 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
   </div>
 </section>
 
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="section-header">
+    <span class="section-label">Questions, answered</span>
+    <h2 class="section-title">The stuff people<br>actually <em>ask.</em></h2>
+  </div>
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">How is Admit Team different from other college consultants?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">We just went through this process — last cycle, not a decade ago. That means we know what's actually working in 2026: which essays land, which activity list framings stand out, which scholarships are worth chasing. We're peer mentors, not retired admissions officers, which also means we're a fraction of the cost of traditional firms.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">How much do your services cost?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">Pricing depends on the package and how much support you need. We're significantly more affordable than traditional consulting firms (which typically run $5,000–$15,000+). <strong>Reach out for a free intro call</strong> and we'll give you a clear quote based on your goals — no pressure, no hidden fees.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">Do you guarantee admission to specific schools?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">No — and you should be skeptical of anyone who does. What we <strong>can</strong> guarantee is a sharper application than you'd produce alone: a more strategic school list, stronger essays, a clearer narrative, and a better-organized timeline. Admissions outcomes depend on factors no consultant controls, but how you present yourself is something we directly improve.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">When should I start working with you?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">Sooner is better. <strong>Rising 12th graders</strong> should start in summer — apps open in August. <strong>Rising 11th graders</strong> benefit most from starting in spring or early summer to lock in a passion project before junior year. <strong>Rising 9th and 10th graders</strong> have the biggest upside since you have years to build something real. That said, we work with people at every stage.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">How are sessions conducted?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">Sessions are virtual via Zoom or Google Meet — works for students anywhere. We also stay connected between sessions through text and email so you're not stuck waiting if you have a quick question. For local Howard County students, in-person sessions can be arranged.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">What if I don't know what my passion project should be?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">That's literally the most common starting point — and exactly what we're here for. Our first few sessions focus on figuring out what you actually care about, what you're naturally good at, and what kind of project would make sense given your time, resources, and goals. You don't need to come in with a plan; you just need to come in.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">Do you only work with high-achieving students?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">Not at all. We work with students across the spectrum — anyone serious about getting the most out of their college process. The strategies that got us into T20s also work for state schools, smaller liberal arts colleges, and merit scholarship competitions. Strong applications matter no matter where you're applying.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">How do scholarships factor into your services?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">Heavily. Between us we earned $1.4M+ in merit aid — including two full rides — so scholarship applications are part of our standard senior package. We help you identify which named scholarships you're competitive for, prep for finalist interviews, and write the supplemental essays that make the difference.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">What happens after the free intro call?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">Zero pressure. After the call, we'll send you a written summary of what we discussed and a proposed plan if it seems like a fit. You decide whether to move forward — no follow-up sales calls, no aggressive nudging. If you sign on, we get to work right away.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">Are you actually qualified to do this?</div>
+        <div class="faq-icon"></div>
+      </summary>
+      <div class="faq-a">Fair question. Between us: 23 acceptances, 5 T20 admits (UPenn, Cornell, Duke, Northwestern, CMU), 2 full-ride scholarships (Banneker Key + W&amp;L Johnson), Lay's Stamps President's Scholar at Georgia Tech, and Isha attending Penn. More importantly, we've helped friends and classmates through their applications throughout the process. Now we're making it official.</div>
+    </details>
+
+  </div>
+</section>
+
 <section id="contact">
   <div class="contact-bg"></div>
   <div class="contact-inner">
@@ -279,8 +493,21 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
       </div>
     </div>
 
-    <!-- Netlify Form — native POST, no JS needed -->
-    <form class="contact-form" name="inquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+    <div>
+      <!-- ── Calendly Placeholder ── -->
+      <!-- TO ACTIVATE: Replace href below with your real Calendly URL (e.g., https://calendly.com/admitteam/intro-call) -->
+      <!-- For embedded inline calendar: replace this whole card with Calendly's embed iframe -->
+      <div class="calendly-card">
+        <div class="calendly-label">Fastest way</div>
+        <h3>Book a time <em>directly.</em></h3>
+        <p>Pick a 20-minute slot that works for you. We'll send a Zoom link automatically.</p>
+        <a href="https://calendly.com/admitteam" target="_blank" class="calendly-btn">Open Calendly →</a>
+      </div>
+
+      <div class="contact-or">Or send us a message</div>
+
+      <!-- Netlify Form — native POST, no JS needed -->
+      <form class="contact-form" name="inquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="inquiry">
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
       <div class="form-row">
@@ -314,6 +541,7 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
       </div>
       <button type="submit" class="form-submit">Send inquiry →</button>
     </form>
+    </div>
   </div>
 </section>
 
@@ -322,7 +550,8 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
   <span class="footer-copy">© 2026 Admit Team · admitteam.us</span>
   <ul class="footer-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </footer>
@@ -331,7 +560,7 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
 const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
-document.querySelectorAll('.stat-item, .service-card, .about-card, .step').forEach(el => observer.observe(el));
+document.querySelectorAll('.stat-item, .service-card, .about-card, .step, .price-card').forEach(el => observer.observe(el));
 document.querySelectorAll('.stat-item').forEach((el, i) => { el.style.transitionDelay = `${i * 0.1}s`; });
 </script>
 </body>
