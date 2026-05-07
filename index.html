@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admit Team — College Consulting</title>
 <meta name="description" content="Peer-led college consulting and passion project mentorship. 23 acceptances, 5 T20 admits, $1.5M+ in merit aid earned.">
+<!-- Open Graph / Social sharing -->
+<meta property="og:title" content="Admit Team — College Consulting by Students Who Got In">
+<meta property="og:description" content="Peer-led college consulting by two 2026 seniors. 23 acceptances, 5 T20 admits, 3 full rides, $1.5M+ in merit aid earned.">
+<meta property="og:image" content="https://admitteam.us/admitteam_logo.png">
+<meta property="og:url" content="https://admitteam.us">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Admit Team — College Consulting by Students Who Got In">
+<meta name="twitter:description" content="Peer-led college consulting by two 2026 seniors. 23 acceptances, 5 T20 admits, 3 full rides, $1.5M+ in merit aid earned.">
+<meta name="twitter:image" content="https://admitteam.us/admitteam_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,6 +36,26 @@ nav.scrolled { padding:14px 60px; }
 .nav-links a:hover { opacity:1; }
 .nav-cta { background:var(--forest); color:var(--cream)!important; opacity:1!important; padding:10px 22px; border-radius:999px; font-size:13px!important; letter-spacing:0.14em!important; }
 .nav-cta:hover { background:var(--forest-2); }
+
+/* ── Mobile hamburger ── */
+.nav-hamburger { display:none; flex-direction:column; justify-content:center; gap:5px; cursor:pointer; background:none; border:none; padding:4px; position:relative; z-index:101; }
+.nav-hamburger span { display:block; width:22px; height:1.5px; background:var(--ink); transition:transform 0.35s, opacity 0.25s, background 0.25s; }
+.nav-hamburger.open span { background:var(--cream); }
+.nav-hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile menu overlay ── */
+.mobile-menu { position:fixed; inset:0; background:var(--forest); z-index:99; display:flex; flex-direction:column; justify-content:center; padding:60px; opacity:0; transform:translateY(-6px); pointer-events:none; transition:opacity 0.3s, transform 0.3s; }
+.mobile-menu.open { opacity:1; transform:translateY(0); pointer-events:all; }
+.mobile-menu-links { list-style:none; display:flex; flex-direction:column; gap:4px; }
+.mobile-menu-links li a { font-family:'Fraunces',serif; font-size:clamp(38px,11vw,62px); font-weight:400; font-style:italic; color:rgba(242,237,225,0.5); text-decoration:none; font-variation-settings:"opsz" 144; letter-spacing:-0.03em; transition:color 0.2s; display:block; padding:4px 0; line-height:1.1; }
+.mobile-menu-links li a:hover { color:var(--cream); }
+.mobile-menu-cta { margin-top:40px; }
+.mobile-menu-cta a { display:inline-flex; align-items:center; gap:8px; background:var(--cream); color:var(--forest); padding:14px 32px; border-radius:999px; font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:background 0.2s; }
+.mobile-menu-cta a:hover { background:var(--cream-2); }
+.mobile-menu-foot { margin-top:auto; padding-top:48px; font-size:12px; color:rgba(242,237,225,0.28); letter-spacing:0.08em; }
+
 #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 60px; position: relative; overflow: hidden; }
 .hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse at 70% 20%,rgba(27,58,46,0.07) 0%,transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(27,58,46,0.05) 0%,transparent 45%); pointer-events:none; }
 .hero-eyebrow { font-size:12px; text-transform:uppercase; letter-spacing:0.32em; font-weight:600; color:var(--forest); margin-bottom:28px; display:flex; align-items:center; gap:14px; opacity:0; animation:fadeUp 0.8s 0.2s forwards; }
@@ -62,6 +92,22 @@ nav.scrolled { padding:14px 60px; }
 .service-list li { font-size:13.5px; color:var(--ink); display:flex; align-items:center; gap:10px; }
 .service-list li::before { content:'—'; color:var(--moss); font-weight:500; flex-shrink:0; }
 .service-num { position:absolute; bottom:32px; right:40px; font-family:'Fraunces',serif; font-size:80px; font-weight:400; font-style:italic; color:transparent; -webkit-text-stroke:1px rgba(27,58,46,0.1); line-height:1; font-variation-settings:"opsz" 144; user-select:none; }
+
+/* ── Why Us ── */
+#why-us { padding:120px 60px; background:var(--forest); color:var(--cream); border-top:1.5px solid var(--ink); }
+#why-us .section-label { color:rgba(206,255,150,0.7); }
+#why-us .section-title { color:var(--cream); }
+#why-us .section-title em { color:rgba(242,237,225,0.45); }
+#why-us .section-header { border-bottom-color:rgba(242,237,225,0.15); }
+.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:64px; }
+.why-item { background:rgba(242,237,225,0.05); padding:48px 40px; border:1px solid rgba(242,237,225,0.08); opacity:0; transform:translateY(20px); transition:opacity 0.5s,transform 0.5s; }
+.why-item.visible { opacity:1; transform:translateY(0); }
+.why-item:nth-child(2) { transition-delay:0.1s; }
+.why-item:nth-child(3) { transition-delay:0.2s; }
+.why-num { font-family:'Fraunces',serif; font-size:52px; font-weight:400; font-style:italic; color:var(--moss); line-height:1; margin-bottom:20px; font-variation-settings:"opsz" 144; opacity:0.6; }
+.why-title { font-family:'Fraunces',serif; font-size:26px; font-weight:450; letter-spacing:-0.02em; font-variation-settings:"opsz" 36; margin-bottom:14px; line-height:1.1; color:var(--cream); }
+.why-desc { font-size:14.5px; line-height:1.7; color:rgba(242,237,225,0.6); }
+
 #proof { background:var(--cream-2); padding:80px 60px; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); }
 .proof-inner { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; gap:0; align-items:center; }
 .proof-divider { width:1px; height:80px; background:rgba(15,15,15,0.2); justify-self:center; }
@@ -175,28 +221,26 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
 .faq-a { padding: 0 60px 28px 0; font-size: 16px; line-height: 1.7; color: var(--dim); max-width: 760px; }
 .faq-a strong { color: var(--ink); font-weight: 500; }
 
-/* ── Calendly card inside contact ── */
-.calendly-card { background: rgba(242,237,225,0.07); border: 1px dashed rgba(242,237,225,0.2); border-radius: 14px; padding: 24px 26px; margin-bottom: 28px; }
-.calendly-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 600; color: var(--moss); margin-bottom: 10px; }
-.calendly-card h3 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 450; letter-spacing: -0.015em; font-variation-settings: "opsz" 36; margin-bottom: 8px; line-height: 1.2; color: var(--cream); }
-.calendly-card h3 em { font-style: italic; color: rgba(242,237,225,0.55); }
-.calendly-card p { font-size: 13.5px; color: rgba(242,237,225,0.6); margin-bottom: 16px; line-height: 1.55; max-width: none; }
-.calendly-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--cream); color: var(--forest); padding: 12px 22px; border-radius: 999px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-.calendly-btn:hover { background: #EBE5D3; transform: translateY(-1px); }
+/* ── Calendly inline embed ── */
+.calendly-embed-wrap { border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
+
 .contact-or { font-size: 11px; text-transform: uppercase; letter-spacing: 0.32em; font-weight: 600; color: rgba(242,237,225,0.4); margin: 16px 0 14px; display: flex; align-items: center; gap: 14px; }
 .contact-or::before, .contact-or::after { content: ''; flex: 1; height: 1px; background: rgba(242,237,225,0.15); }
+
 @media(max-width:900px){
   nav{padding:18px 24px} nav.scrolled{padding:12px 24px} .nav-links{display:none}
+  .nav-hamburger{display:flex;}
   #hero{padding:0 24px 60px} #stats{padding:0 24px} .stats-inner{grid-template-columns:1fr 1fr}
-  #services,#about,#process,#contact,#pricing,#faq{padding:80px 24px}
-  .services-grid,.about-grid,.process-steps,.pricing-grid{grid-template-columns:1fr}
+  #services,#about,#process,#contact,#pricing,#faq,#why-us{padding:80px 24px}
+  .services-grid,.about-grid,.process-steps,.pricing-grid,.why-grid{grid-template-columns:1fr}
   .proof-inner{grid-template-columns:1fr;gap:32px} .proof-divider{display:none}
   .proof-item{text-align:left!important;padding:0!important}
   .contact-inner{grid-template-columns:1fr;gap:48px} .form-row{grid-template-columns:1fr}
   footer{flex-direction:column;gap:16px;text-align:center}
-#proof{padding:60px 24px}
+  #proof{padding:60px 24px}
   .section-header{flex-direction:column;gap:16px}
   .faq-q{font-size:18px} .faq-a{padding-right:36px}
+  .mobile-menu{padding:40px 32px;}
 }
 </style>
 </head>
@@ -211,7 +255,24 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Book a Call</a></li>
   </ul>
+  <button class="nav-hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ul class="mobile-menu-links">
+    <li><a href="#services" class="mobile-link">Services</a></li>
+    <li><a href="#pricing" class="mobile-link">Pricing</a></li>
+    <li><a href="#about" class="mobile-link">About</a></li>
+    <li><a href="#faq" class="mobile-link">FAQ</a></li>
+  </ul>
+  <div class="mobile-menu-cta">
+    <a href="#contact" class="mobile-link">Book a free call →</a>
+  </div>
+  <div class="mobile-menu-foot">admitteam.us · @admit.team</div>
+</div>
 
 <section id="hero">
   <div class="hero-bg"></div>
@@ -264,6 +325,31 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
       <p class="service-desc">End-to-end support for the entire application cycle — from building your school list to hitting submit. We just went through every part of this process and know exactly what moves the needle.</p>
       <ul class="service-list" style="display:grid;grid-template-columns:1fr 1fr;gap:8px 40px;"><li>School list strategy</li><li>Common App essay</li><li>Supplemental essays</li><li>Activity list polish</li><li>Interview prep</li><li>Scholarship applications</li></ul>
       <div class="service-num">03</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Why Us ── -->
+<section id="why-us">
+  <div class="section-header">
+    <span class="section-label">Why peer consulting</span>
+    <h2 class="section-title">Not your parents'<br><em>consultant.</em></h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <h3 class="why-title">We just did this.</h3>
+      <p class="why-desc">Last cycle, not a decade ago. We know which supplemental prompts are new, which essay angles are tired, and which scholarships are worth the extra application. That knowledge expires fast — ours hasn't.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <h3 class="why-title">A fraction of the price.</h3>
+      <p class="why-desc">Traditional firms charge $5,000–$15,000+. We're peer mentors — no overhead, no corporate markup. You get invested, experienced guidance at a cost most families can actually afford.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <h3 class="why-title">We speak the language.</h3>
+      <p class="why-desc">Students open up to us differently than they do to a 45-year-old advisor. That honesty makes better essays. We know what "authentic" actually sounds like because we were writing those essays twelve months ago.</p>
     </div>
   </div>
 </section>
@@ -492,14 +578,12 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
     </div>
 
     <div>
-      <!-- ── Calendly Placeholder ── -->
-      <!-- TO ACTIVATE: Replace href below with your real Calendly URL (e.g., https://calendly.com/admitteam/intro-call) -->
-      <!-- For embedded inline calendar: replace this whole card with Calendly's embed iframe -->
-      <div class="calendly-card">
-        <div class="calendly-label">Fastest way</div>
-        <h3>Book a time <em>directly.</em></h3>
-        <p>Pick a 30-minute slot that works for you. We'll send a Google Meet link automatically.</p>
-        <a href="https://calendly.com/admit-team1" target="_blank" class="calendly-btn">Open Calendly →</a>
+      <!-- Calendly inline widget -->
+      <div class="calendly-embed-wrap">
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/admit-team1?hide_gdpr_banner=1&background_color=1b3a2e&text_color=f2ede1&primary_color=4a7c59"
+             style="min-width:280px;height:650px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
 
       <div class="contact-or">Or send us a message</div>
@@ -523,7 +607,7 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
         <input type="email" id="email" name="email" placeholder="jordan@email.com" required>
       </div>
       <div class="form-group">
-        <label for="grade">Current Grade (Fall 2025)</label>
+        <label for="grade">Current Grade (Fall 2026)</label>
         <select id="grade" name="grade" required>
           <option value="" disabled selected>Select your grade</option>
           <option>Rising 9th grader</option>
@@ -555,11 +639,34 @@ footer { background:var(--ink); color:rgba(242,237,225,0.5); padding:32px 60px; 
 </footer>
 
 <script>
+// Nav shrink on scroll
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
+
+// Scroll-in animations
 const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
-document.querySelectorAll('.stat-item, .service-card, .about-card, .step, .price-card').forEach(el => observer.observe(el));
+document.querySelectorAll('.stat-item, .service-card, .about-card, .step, .price-card, .why-item').forEach(el => observer.observe(el));
 document.querySelectorAll('.stat-item').forEach((el, i) => { el.style.transitionDelay = `${i * 0.1}s`; });
+
+// Mobile menu
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  menuBtn.classList.toggle('open', isOpen);
+  menuBtn.setAttribute('aria-expanded', isOpen);
+  mobileMenu.setAttribute('aria-hidden', !isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuBtn.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  });
+});
 </script>
 </body>
 </html>
